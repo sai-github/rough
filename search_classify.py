@@ -101,16 +101,16 @@ draw_image = np.copy(image)
 # image you are searching is a .jpg (scaled 0 to 255)
 #image = image.astype(np.float32)/255
 
-##windows = slide_window(image, x_start_stop=[None, None], y_start_stop=y_start_stop, 
-##                    xy_window=(96, 96), xy_overlap=(0.7, 0.7))
+windows = slide_window(image, x_start_stop=[None, None], y_start_stop=y_start_stop, 
+                   xy_window=(96, 96), xy_overlap=(0.7, 0.7))
 
-pyramid = [((64, 64),  [400, 500]),
-           ((96, 96),  [400, 500]),
-           ((80, 80),  [450, 550]),
-           ((100, 100),[450, 550]),
-           ((128, 128),[450, 650]),]
+# pyramid = [((64, 64),  [400, 500]),
+#            ((96, 96),  [400, 500]),
+#            ((80, 80),  [450, 550]),
+#            ((100, 100),[450, 550]),
+#            ((128, 128),[450, 650]),]
 
-windows = create_windows(pyramid, image, xy_overlap=(0.01,0.01))
+windows = create_windows(pyramid, image, xy_overlap=(0.7,0.7))
 
 print('****',len(windows),type(windows))
 
